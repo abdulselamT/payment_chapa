@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form_chapaform" model="ir.ui.view">
+        <field name="name">chapa Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name = "provider_credentials" position='inside'>
+                <group invisible="code !='chapa'">
+                    <field name="chapa_public_api_key" required="code == 'chapa' and state != 'disabled'"/>
+                    <field name="chapa_private_key" required="code == 'chapa' and state != 'disabled'"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

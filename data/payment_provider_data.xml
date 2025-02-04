@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="payment_chapa.payment_provider_chapa" model="payment.provider">
+            <field name="name">chapa</field>
+            <field name="code">chapa</field>
+            <field name="redirect_form_view_id" ref="redirect_form"/>
+            <field name="image_128" type="base64" file="payment_chapa/static/src/description/icon.png"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="module_id" ref="base.module_payment_chapa"/>
+             <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment_chapa.payment_method_chapa'),
+                     ])]"
+        />
+        </record>
+    </data>
+</odoo>
